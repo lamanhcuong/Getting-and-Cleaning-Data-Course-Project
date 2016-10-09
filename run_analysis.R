@@ -81,4 +81,5 @@ all_data <- cbind(obs_mdata, act_mdata, sub_mdata)
 tidy_data <- ddply(all_data, .(subject, activity), function(x) colMeans(x[, 1:feacount]))
 write.table(tidy_data, "tidy_data.txt", row.name=FALSE)
 
+## Set working directory back to original one before script
 setwd("../")
